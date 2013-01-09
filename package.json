@@ -1,0 +1,18 @@
+{
+    "name": "friday",
+    "version": "0.0.0",
+    "description": "This application will remember to your followers when it's friday \\o/",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Nesk/friday.git"
+    },
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "express": "3.0.x",
+        "jade": "0.27.x",
+        "ntwitter": "0.5.x"
+    },
+    "private": true
+}

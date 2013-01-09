@@ -1,0 +1,14 @@
+extends layout
+
+block settings
+    #settings
+        form(method='post')
+            |By default, your time zone has been set to
+            em#currentGMT
+            |, you can modify it below :
+            br
+            br
+            select(name='gmt')
+                option(selected) Choose your time zone...
+                - for(var gmt = -12 ; gmt <= 12 ; gmt++)
+                    option(value=gmt) GMT #{gmt}

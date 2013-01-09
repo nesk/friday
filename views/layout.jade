@@ -1,0 +1,21 @@
+doctype 5
+html
+    head
+        meta(charset='utf-8')
+        title It's Friday!
+        style
+            @import url('/css/friday.css');
+    body
+        block signin
+        block settings
+
+        div#container
+            //
+                object(type='application/x-shockwave-flash', data='/flash/friday.swf')
+                    param(name='movie', value='/flash/friday.swf')
+                    param(name='wmode', value='transparent')
+                object(type='application/x-shockwave-flash', data='/flash/not_friday.swf')
+                    param(name='movie', value='/flash/not_friday.swf')
+                    param(name='wmode', value='transparent')
+
+        script(src='/js/friday.js')
