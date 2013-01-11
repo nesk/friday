@@ -1,6 +1,7 @@
 application:
     consumer_key:
     consumer_secret:
+    callback_url:
 
 primary_account:
     access_token:
