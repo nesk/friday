@@ -12,7 +12,9 @@
     "dependencies": {
         "express": "3.0.x",
         "jade": "0.27.x",
-        "ntwitter": "0.5.x"
+        "ntwitter": "0.5.x",
+        "oauth": "0.9.x",
+        "yamljs": "0.1.x"
     },
     "private": true
 }
