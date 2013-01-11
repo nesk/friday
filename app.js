@@ -1,5 +1,5 @@
 var express = require('express'),
-    routes = require('./routes'),
+    controllers = require('./controllers'),
     http = require('http'),
     path = require('path'),
     yaml = require('yamljs');
@@ -23,8 +23,8 @@ app.configure('development', function(){
     app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
-app.get('/settings', routes.settings);
+app.get('/', controllers.index);
+app.get('/settings', controllers.settings);
 
 app.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
