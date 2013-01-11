@@ -1,0 +1,9 @@
+application:
+    consumer_key:
+    consumer_secret:
+
+primary_account:
+    access_token:
+    access_token-secret:
+
+users_file: users.json
