@@ -2,6 +2,7 @@ application:
     consumer_key:
     consumer_secret:
     callback_url:
+    cookie_secret:
 
 primary_account:
     access_token:
