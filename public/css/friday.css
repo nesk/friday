@@ -21,7 +21,16 @@ object {
     display: none;
 }
 
-#signin, #settings {
+#flashMsg {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 20px;
+    background-color: #111;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1;
+}
+
+#content {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     padding: 20px;

@@ -6,19 +6,22 @@ html
         style
             @import url('/css/friday.css');
     body
+        if flashMsg
+            #flashMsg= flashMsg
 
-        div#container
-            //
-                object(type='application/x-shockwave-flash', data='/flash/friday.swf')
-                    param(name='movie', value='/flash/friday.swf')
-                    param(name='wmode', value='transparent')
-                object(type='application/x-shockwave-flash', data='/flash/not_friday.swf')
-                    param(name='movie', value='/flash/not_friday.swf')
-                    param(name='wmode', value='transparent')
         #content
             if !authenticated
                 include sign-in
             else
                 include settings
+
+        #container
+        //
+            object(type='application/x-shockwave-flash', data='/flash/friday.swf')
+                param(name='movie', value='/flash/friday.swf')
+                param(name='wmode', value='transparent')
+            object(type='application/x-shockwave-flash', data='/flash/not_friday.swf')
+                param(name='movie', value='/flash/not_friday.swf')
+                param(name='wmode', value='transparent')
 
         script(src='/js/friday.js')
