@@ -6,7 +6,6 @@ html
         style
             @import url('/css/friday.css');
     body
-        block content
 
         div#container
             //
@@ -16,5 +15,10 @@ html
                 object(type='application/x-shockwave-flash', data='/flash/not_friday.swf')
                     param(name='movie', value='/flash/not_friday.swf')
                     param(name='wmode', value='transparent')
+        #content
+            if !authenticated
+                include sign-in
+            else
+                include settings
 
         script(src='/js/friday.js')

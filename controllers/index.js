@@ -1,5 +1,7 @@
 exports.index = function(req, res) {
-    res.render('index');
+    res.render('index', {
+        authenticated: !!req.session.id,
+    });
 };
 
 exports.auth = function(req, res) {
