@@ -6,8 +6,9 @@ html
         style
             @import url('/css/friday.css');
     body
-        if flashMsg
-            #flashMsg= flashMsg
+        #msg-list
+            if flashMsg
+                .msg= flashMsg
 
         #content
             if !authenticated
