@@ -32,5 +32,21 @@ exports.authCallback = function(req, res) {
 };
 
 exports.settings = function(req, res) {
-    res.render('settings');
+    switch(res.locals.status) {
+        case 0:
+            res.send(JSON.stringify({
+                msg: "Your settings have been updated."
+            }));
+        break;
+        case 1:
+            res.send(JSON.stringify({
+                msg: "Make sure to specify correctly your time zone and the hour and try again."
+            }));
+        break;
+        case 2:
+            req.session.flashMsg = "You're not authenticated, please sign in with Twitter below and try again.";
+            res.send(JSON.stringify({
+                error: true
+            }));
+    }
 };
