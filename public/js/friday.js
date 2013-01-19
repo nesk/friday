@@ -41,4 +41,41 @@
         flashMsg.applyTimeout(msgList.childNodes[0]); // There can be only one message when the page is loading, a loop is unnecessary.
     }
 
+    /*
+     *  Settings
+     */
+
+    var settings = document.getElementById('settings');
+
+    if(settings) {
+        settings.onsubmit = function(event) {
+            event.preventDefault();
+
+            var gmt = document.getElementsByName('gmt')[0];
+            gmt = encodeURIComponent(gmt.options[gmt.selectedIndex].value);
+
+            var hour = document.getElementsByName('hour')[0];
+            hour = encodeURIComponent(hour.options[hour.selectedIndex].value);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/settings');
+
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == xhr.DONE) {
+                    var res = JSON.parse(xhr.responseText);
+
+                    if(!res.error) {
+                        flashMsg.add(res.msg);
+                    } else {
+                        location = '/';
+                    }
+                }
+            };
+
+            xhr.send('gmt=' + gmt + '&hour=' + hour);
+        };
+    }
+
 })();
