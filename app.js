@@ -1,5 +1,5 @@
 var express = require('express'),
-    controllers = require('./controllers'),
+    mainControllers = require('./controllers'),
     http = require('http'),
     path = require('path'),
     yaml = require('yamljs');
@@ -8,7 +8,8 @@ var app = express(),
     config = yaml.load('config.yml'), // Loads the app configuration
     Manager = require(path.join(__dirname, 'lib/manager')).init(config); // Initiates the Manager with the app configuration
 
-var authControllers = Manager.submodules.auth.controllers;
+var authControllers = Manager.submodules.auth.controllers,
+    managControllers = Manager.controllers;
 
 app.configure(function(){
     app.set('port', 3000);
@@ -27,10 +28,10 @@ app.configure('development', function(){
     app.use(express.errorHandler());
 });
 
-app.get('/', controllers.index);
-app.get('/auth', authControllers.auth, controllers.auth);
-app.get('/auth/callback', authControllers.callback, controllers.authCallback);
-app.get('/settings', controllers.settings);
+app.get('/', mainControllers.index);
+app.get('/auth', authControllers.auth, mainControllers.auth);
+app.get('/auth/callback', authControllers.callback, mainControllers.authCallback);
+app.post('/settings', managControllers.settings, mainControllers.settings);
 
 app.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
