@@ -8,7 +8,7 @@
         objects = document.getElementsByTagName('object'),
         index = +(day != 5);
     
-    // objects[index].style.display = 'block';
+    objects[index].style.display = 'block';
 
     /*
      * Flash messages
