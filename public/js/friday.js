@@ -8,7 +8,7 @@
         objects = document.getElementsByTagName('object'),
         index = +(day != 5);
     
-    objects[index].style.display = 'block';
+    // objects[index].style.display = 'block';
 
     /*
      * Flash messages
@@ -51,8 +51,8 @@
         settings.onsubmit = function(event) {
             event.preventDefault();
 
-            var gmt = document.getElementsByName('gmt')[0];
-            gmt = encodeURIComponent(gmt.options[gmt.selectedIndex].value);
+            var utc = document.getElementsByName('utc')[0];
+            utc = encodeURIComponent(utc.options[utc.selectedIndex].value);
 
             var hour = document.getElementsByName('hour')[0];
             hour = encodeURIComponent(hour.options[hour.selectedIndex].value);
@@ -74,7 +74,7 @@
                 }
             };
 
-            xhr.send('gmt=' + gmt + '&hour=' + hour);
+            xhr.send('utc=' + utc + '&hour=' + hour);
         };
     }
 
