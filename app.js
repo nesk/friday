@@ -12,7 +12,7 @@ var authControllers = Manager.submodules.auth.controllers,
     managControllers = Manager.controllers;
 
 app.configure(function(){
-    app.set('port', 3000);
+    app.set('port', config.server.port);
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
     app.use(express.favicon());

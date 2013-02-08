@@ -8,4 +8,10 @@ primary_account:
     access_token:
     access_token_secret:
 
-users_file: users.json
+server:
+    domain:
+    port:
+
+message:
+
+users_file:
