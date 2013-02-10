@@ -50,3 +50,7 @@ exports.settings = function(req, res) {
             }));
     }
 };
+
+exports.hash = function(req, res) {
+    res.redirect('/'); // Redirecting to the index page to avoid weird URLs
+};

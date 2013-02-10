@@ -32,6 +32,7 @@ app.get('/', mainControllers.index);
 app.get('/auth', authControllers.auth, mainControllers.auth);
 app.get('/auth/callback', authControllers.callback, mainControllers.authCallback);
 app.post('/settings', managControllers.settings, mainControllers.settings);
+app.get('/hash/:hash', mainControllers.hash);
 
 app.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
