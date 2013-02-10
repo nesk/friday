@@ -32,7 +32,6 @@ object {
     height: 20px;
     background-color: #111;
     background-color: rgba(0,0,0,0.8);
-    border-bottom: 1px solid #CCC;
     overflow: hidden;
 
     -moz-transition: all 0.2s linear;
