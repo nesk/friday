@@ -8,7 +8,8 @@ html
     body
         #msg-list
             if flashMsg
-                .msg= flashMsg
+                .msg
+                    |!{flashMsg}
 
         #content
             if !authenticated
