@@ -1,10 +1,9 @@
 var express = require('express'),
     http = require('http'),
-    path = require('path'),
-    yaml = require('yamljs');
+    path = require('path');
 
 var app = express(),
-    config = yaml.load(path.join(__dirname, 'config.yml')), // Loads the app configuration
+    config = require(path.join(__dirname, 'config.json')), // Loads the app configuration
     Manager = require(path.join(__dirname, 'lib/manager')).init(config); // Initiates the Manager with the app configuration
 
 var mainControllers = require(path.join(__dirname, 'controllers')),

@@ -1,0 +1,22 @@
+{
+    "application": {
+        "consumer_key": "",
+        "consumer_secret": "",
+        "callback_url": "",
+        "cookie_secret": ""
+    },
+
+    "primary_account": {
+        "access_token": "",
+        "access_token_secret": ""
+    },
+
+    "server": {
+        "domain": "",
+        "port": ""
+    },
+
+    "message": "",
+
+    "users_file": ""
+}
