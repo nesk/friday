@@ -1,15 +1,15 @@
 var express = require('express'),
-    mainControllers = require('./controllers'),
     http = require('http'),
     path = require('path'),
     yaml = require('yamljs');
 
 var app = express(),
-    config = yaml.load('config.yml'), // Loads the app configuration
+    config = yaml.load(path.join(__dirname, 'config.yml')), // Loads the app configuration
     Manager = require(path.join(__dirname, 'lib/manager')).init(config); // Initiates the Manager with the app configuration
 
-var authControllers = Manager.submodules.auth.controllers,
-    managControllers = Manager.controllers;
+var mainControllers = require(path.join(__dirname, 'controllers')),
+    managControllers = Manager.controllers,
+    authControllers = Manager.submodules.auth.controllers;
 
 app.configure(function(){
     app.set('port', config.server.port);
