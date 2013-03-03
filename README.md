@@ -1,6 +1,6 @@
 # It’s Friday!
 
-_It’s Friday_ provides more fun in your followers life by remembering them when it’s friday, so they can start to enjoy there week-end.
+_It’s Friday_ provides more fun in your followers' life by reminding them when it’s friday, so they can start to enjoy their week-end.
 
 ## Usage
 
