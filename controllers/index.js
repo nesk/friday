@@ -51,6 +51,7 @@ exports.settings = function(req, res) {
     }
 };
 
+// The hash isn't used anymore, it's just here for backward compatibility with the old tweets.
 exports.hash = function(req, res) {
     res.redirect('/'); // Redirecting to the index page to avoid weird URLs
 };

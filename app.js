@@ -30,7 +30,7 @@ app.get('/', mainControllers.index);
 app.get('/auth', authControllers.auth, mainControllers.auth);
 app.get('/auth/callback', authControllers.callback, mainControllers.authCallback);
 app.post('/settings', managControllers.settings, mainControllers.settings);
-app.get('/hash/:hash', mainControllers.hash);
+app.get('/hash/:hash', mainControllers.hash); // The hash isn't used anymore, it's just here for backward compatibility with the old tweets.
 
 app.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
