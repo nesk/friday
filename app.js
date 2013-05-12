@@ -15,7 +15,6 @@ app.configure(function(){
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
     app.use(express.favicon());
-    app.use(express.logger());
     app.use(express.cookieParser());
     app.use(express.cookieSession({ secret:config.application.cookie_secret }));
     app.use(express.bodyParser());
